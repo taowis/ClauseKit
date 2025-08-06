@@ -140,6 +140,7 @@ ollama run llama3
 
 
 # Run the app
+```bash
 streamlit run app/app.py
 ```
 
@@ -202,3 +203,73 @@ ClauseKit is designed as a production-ready legal AI assistant with the followin
 | 📦 **Modular Architecture** | Designed with a clean and extensible folder structure and maintainable codebase |
 | 📄 **Multi-format Output** | Generates summaries in Markdown, HTML, PDF, and Word for legal usability |
 | 🌍 **Multilingual Support** | Auto-detects English or Chinese and adjusts prompts and outputs accordingly |
+
+---
+
+## 🚀 Deployment on [Render.com](https://render.com)
+
+### ✅ Deploying ClauseKit on Render.com
+
+ClauseKit can be deployed in a few steps using [Render](https://render.com), a simple cloud platform for full-stack apps.
+
+---
+
+### ⚙️ 1. **Create a new Render Web Service**
+
+1. Go to [https://dashboard.render.com](https://dashboard.render.com)
+2. Click **"New +" → "Web Service"**
+3. Connect **https://github.com/taowis/ClauseKit**
+4. Fill out the form:
+   - **Name:** `ClauseKit`
+   - **Environment:** `Python 3`
+   - **Build Command:**
+     ```bash
+     pip install -r requirements.txt
+     ```
+   - **Start Command:**
+     ```bash
+     streamlit run app/app.py --server.port=$PORT --server.address=0.0.0.0
+     ```
+   - **Instance Type:** `Free` (or upgrade for better performance)
+
+---
+
+### 🔐 2. **Set Environment Variables**
+
+In the **"Environment"** section of the Render dashboard, add:
+
+| Key                   | Value                          |
+|----------------------|--------------------------------|
+| `OPENAI_API_KEY`     | `your-openai-api-key-here`     |
+| `DEFAULT_MODEL`      | `gpt-4.1-mini` *(or any)*       |
+| `SHOW_ADVANCED_MODELS` | `true` *(optional)*         |
+
+> 🚫 Do NOT upload `.env` file to GitHub — use the Render Environment tab instead.
+
+---
+
+### 🧪 3. **Test your app**
+
+Once deployed, your app will be available at:
+
+```
+https://clausekit.onrender.com
+```
+
+Or the subdomain you selected (e.g., `https://clausekit.render.com`)
+
+---
+
+### 📄 Sample Testing
+
+Upload a contract PDF by clicking **"Upload your legal PDF contract"**, or try uploading from:
+
+```
+samples/sample-contract.pdf
+```
+
+---
+
+### ✅ Done!
+
+Your AI-powered contract summarizer is now live 🎉
