@@ -254,7 +254,7 @@ Once deployed, the app will be available at:
 
 **https://clausekit.onrender.com**
 
-Or the subdomain you selected (e.g., `https://clausekit.render.com`)
+Or the subdomain you selected (e.g., `https://subdomain.render.com`)
 
 ---
 
