@@ -1,6 +1,6 @@
 # 🧠 ClauseKit
 
-**ClauseKit** is an AI-powered assistant that intelligently summarizes **residential tenancy agreements** into structured, multilingual legal overviews.
+**ClauseKit** is an AI-powered assistant that intelligently summarizes **legal agreements** into structured, multilingual legal overviews.
 
 ---
 
