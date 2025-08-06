@@ -12,7 +12,7 @@ from datetime import datetime
 show_advanced_models = os.getenv("SHOW_ADVANCED_MODELS", "false").lower() == "true"
 
 # Load environment variables if any
-DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4")
+DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4-mini")
 
 st.set_page_config(page_title="ClauseKit", layout="wide")
 st.title("📄 ClauseKit – AI-Powered Contract Summarizer")
@@ -22,14 +22,15 @@ st.sidebar.header("⚙️ Configuration")
 if show_advanced_models:
     model_choice = st.sidebar.selectbox(
         "Choose a large language model (LLM)",
-        ["gpt-4", "claude", "mistral", "llama3", "yi"],
-        index=["gpt-4", "claude", "mistral", "llama3", "yi"].index(DEFAULT_MODEL)
+        ["gpt-4.1-mini", "gpt-4", "claude", "mistral", "llama3", "yi"],
+        index=["gpt-4.1-mini", "gpt-4", "claude", "mistral", "llama3", "yi"].index(DEFAULT_MODEL)
+        if DEFAULT_MODEL in ["gpt-4.1-mini", "gpt-4", "claude", "mistral", "llama3", "yi"] else 0
     )
 else:
     model_choice = st.sidebar.selectbox(
         "Choose a large language model (LLM)",
-        ["mistral", "llama3", "yi"],
-        index=["mistral", "llama3", "yi"].index(DEFAULT_MODEL)
+        ["gpt-4.1-mini", "gpt-4", "claude"],
+        index=["gpt-4.1-mini", "gpt-4", "claude"].index(DEFAULT_MODEL)
     )
 
 language_option = st.sidebar.selectbox(
@@ -73,11 +74,17 @@ if uploaded_file is not None:
     col1, col2 = st.columns(2)
 
     with col1:
-        html_file_path = export_to_html(summary_output, filename="summary.html")
-        with open(html_file_path, "rb") as f:
-            st.download_button("⬇️ Download HTML", f, file_name="summary.html", mime="text/html")
+        try:
+            html_file_path = export_to_html("summary.html", summary_output, model=model_choice)
+            with open(html_file_path, "rb") as f:
+                st.download_button("⬇️ Download HTML", f, file_name="summary.html", mime="text/html")
+        except Exception as e:
+            st.error(f"❌ Failed to export HTML summary.\n\n{e}")
 
     with col2:
-        pdf_file_path = export_to_pdf(summary_output, filename="summary.pdf")
-        with open(pdf_file_path, "rb") as f:
-            st.download_button("⬇️ Download PDF", f, file_name="summary.pdf", mime="application/pdf")
+        try:
+            pdf_file_path = export_to_pdf("summary.pdf", summary_output)
+            with open(pdf_file_path, "rb") as f:
+                st.download_button("⬇️ Download PDF", f, file_name="summary.pdf", mime="application/pdf")
+        except Exception as e:
+            st.error(f"❌ Failed to export PDF summary.\n\n{e}")

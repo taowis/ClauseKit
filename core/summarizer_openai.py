@@ -16,7 +16,7 @@ client = OpenAI(api_key=api_key)
 # Load the OpenAI API key from environment variable
 #client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def query_openai(prompt: str, model: str = "gpt-4") -> str:
+def query_openai(prompt: str, model_choice: str = "gpt-4") -> str:
     """
     Calls the OpenAI Chat API with the given prompt.
 
@@ -29,14 +29,10 @@ def query_openai(prompt: str, model: str = "gpt-4") -> str:
     """
     try:
         response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a legal assistant that summarizes tenancy contracts."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.4,
-            max_tokens=2048,
+            model=model_choice,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3,
         )
-        return response['choices'][0]['message']['content'].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         return f"[OpenAI API Error] {str(e)}"

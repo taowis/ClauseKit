@@ -39,7 +39,8 @@ def export_to_pdf(output_path, summary_text, model="Unknown", timestamp=None):
         y -= 15
 
     c.save()
-
+    
+    return output_path  # ✅ must return this
 
 def export_to_html(output_path, summary_text, model="Unknown", timestamp=None):
     """
@@ -100,3 +101,5 @@ def export_to_html(output_path, summary_text, model="Unknown", timestamp=None):
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(html_content)
+
+    return output_path  # ✅ Ensure file path is returned
