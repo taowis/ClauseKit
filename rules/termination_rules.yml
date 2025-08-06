@@ -1,0 +1,18 @@
+# YAML rules for termination clauses
+termination_clauses:
+  - pattern: "(?i)early termination"
+    description: "Mentions early termination; check if proper notice period or penalty is specified."
+  - pattern: "(?i)break lease"
+    description: "Break lease clauses may impose a fee on the tenant."
+  - pattern: "(?i)termination fee"
+    description: "Check if the fee is reasonable and complies with NSW tenancy law."
+  - pattern: "(?i)14 days notice"
+    description: "Standard minimum notice for early termination under fixed term."
+  - pattern: "(?i)vacate the premises"
+    description: "Clause indicating when or how tenant must leave the property."
+  - pattern: "(?i)breach of agreement"
+    description: "May refer to automatic termination conditions—check fairness."
+  - pattern: "(?i)non-payment of rent"
+    description: "Non-payment clauses can trigger eviction—flag for review."
+  - pattern: "(?i)termination by landlord"
+    description: "Check if this clause aligns with Residential Tenancies Act 2010."

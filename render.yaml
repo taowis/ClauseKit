@@ -1,0 +1,28 @@
+# render.yaml
+# Render deployment configuration for ClauseKit Streamlit app
+
+services:
+  - type: web
+    name: clausekit
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app/app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CLAUDE_API_KEY
+        sync: false
+      - key: SHOW_ADVANCED_MODELS
+        value: "false"
+      - key: PYTHON_VERSION
+        value: 3.11
+    plan: free
+    region: oregon  # You can change to 'frankfurt', etc., based on your audience
+
+# Optional: background workers for other purposes (e.g., async tasks or jobs)
+# workers:
+#   - type: worker
+#     name: clausekit-worker
+#     runtime: python
+#     buildCommand: pip install -r requirements.txt
+#     startCommand: python worker.py

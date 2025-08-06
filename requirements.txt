@@ -1,0 +1,11 @@
+streamlit
+openai
+anthropic
+langdetect
+fpdf
+requests
+reportlab
+langchain
+langchain-community
+langchain-openai
+faiss-cpu
