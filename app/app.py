@@ -12,7 +12,7 @@ from datetime import datetime
 show_advanced_models = os.getenv("SHOW_ADVANCED_MODELS", "false").lower() == "true"
 
 # Load environment variables if any
-DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4-mini")
+DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4.1-mini")
 
 st.set_page_config(page_title="ClauseKit", layout="wide")
 st.title("📄 ClauseKit – AI-Powered Contract Summarizer")
