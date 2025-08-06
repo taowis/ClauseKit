@@ -1,11 +1,26 @@
-streamlit
-openai
-anthropic
-langdetect
-fpdf
-requests
-reportlab
-langchain
-langchain-community
-langchain-openai
-faiss-cpu
+# Core web app
+streamlit>=1.35.0
+
+# Language detection
+langdetect>=1.0.9
+
+# PDF parsing
+PyMuPDF>=1.23.24  # This installs the correct fitz module
+
+# LLM and embeddings
+openai>=1.30.1
+langchain>=0.2.1
+langchain-community>=0.2.1
+langchain-openai>=0.1.7
+
+# Vector store
+faiss-cpu>=1.7.4  # If using CPU version (render.com compatible)
+
+# Export and document generation
+reportlab>=4.0.8  # For PDF export
+
+# Environment variables
+python-dotenv>=1.0.1
+
+# Optional: better CLI for local testing
+rich>=13.7.1
