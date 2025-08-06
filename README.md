@@ -250,11 +250,9 @@ In the **"Environment"** section of the Render dashboard, add:
 
 ### 🧪 3. **Test your app**
 
-Once deployed, your app will be available at:
+Once deployed, the app will be available at:
 
-```
-https://clausekit.onrender.com
-```
+**https://clausekit.onrender.com**
 
 Or the subdomain you selected (e.g., `https://clausekit.render.com`)
 
