@@ -256,9 +256,13 @@ Once deployed, the app will be available at:
 
 Or the subdomain you selected (e.g., `https://subdomain.render.com`)
 
+You also can browse this app on YouTube at:
+
+[![Watch the video](https://img.youtube.com/vi/gw-pZKCok_c/0.jpg)](https://youtu.be/gw-pZKCok_c)
+
 ---
 
-### 📄 Sample Testing
+## 📄 Sample Testing
 
 Upload a contract PDF by clicking **"Upload your legal PDF contract"**, or try uploading from:
 
