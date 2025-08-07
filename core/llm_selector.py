@@ -32,7 +32,14 @@ def call_model(prompt: str, model_choice: str = "gpt-4") -> str:
 
     elif model_choice.startswith("claude"):
         from core.summarizer_claude import query_claude
-        return query_claude(prompt, model_choice)
+
+        # Optional: default mapping for shorthand
+        if model_choice == "claude":
+            actual_model = "claude-3-5-sonnet-20241022"
+        else:
+            actual_model = model_choice
+
+        return query_claude(prompt, actual_model)
 
     elif model_choice in ["mistral", "llama3", "yi", "gemma", "phi"]:
         from core.summarizer_local import query_ollama

@@ -29,8 +29,8 @@ if show_advanced_models:
 else:
     model_choice = st.sidebar.selectbox(
         "Choose a large language model (LLM)",
-        ["gpt-4.1-mini", "gpt-4", "claude"],
-        index=["gpt-4.1-mini", "gpt-4", "claude"].index(DEFAULT_MODEL)
+        ["gpt-4.1-mini", "claude"],
+        index=["gpt-4.1-mini", "claude"].index(DEFAULT_MODEL)
     )
 
 language_option = st.sidebar.selectbox(
