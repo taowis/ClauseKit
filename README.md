@@ -1,13 +1,13 @@
-# 🧠 ClauseKit
+# 🧠 ClauseKitAI
 
-**ClauseKit** is an AI-powered assistant that intelligently summarizes **legal agreements** into structured, multilingual legal overviews.
+**ClauseKitAI** is an AI-powered assistant that intelligently summarizes **legal agreements** into structured, multilingual legal overviews.
 
 ---
 
 ## 📂 Project Links
 
-- 🔧 [Source Code](https://github.com/biosciences/ClauseKit): Explore the full project
-- 🌐 [Live Report](https://biosciences.github.io/ClauseKit/index.html): View the HTML summary output
+- 🔧 [Source Code](https://github.com/biosciences/ClauseKitAI): Explore the full project
+- 🌐 [Live Report](https://biosciences.github.io/ClauseKitAI/index.html): View the HTML summary output
 
 ---
 
@@ -32,7 +32,7 @@
 ## 🧾 Folder Structure
 
 ```
-ClauseKit/
+ClauseKitAI/
 ├── app/                         # Streamlit app (main UI layer)
 │   └── app.py
 ├── core/                        # Core summarization and export logic
@@ -79,7 +79,7 @@ tests/
 
 ## 🖼️ Demo Screenshot
 
-![ClauseKit Demo](docs/assets/Demo.png)
+![ClauseKitAI Demo](docs/assets/Demo.png)
 
 > 📎 This screenshot shows the summary generated from a standard NSW residential tenancy agreement.
 
@@ -87,7 +87,7 @@ tests/
 
 ## 🧰 Local Model Support via Ollama (Mac M4 Optimized)
 
-ClauseKit supports self-hosted LLMs like LLaMA 3, Yi-1.5, Mistral through [Ollama](https://ollama.com), optimized for Apple Silicon chips (M1–M4).
+ClauseKitAI supports self-hosted LLMs like LLaMA 3, Yi-1.5, Mistral through [Ollama](https://ollama.com), optimized for Apple Silicon chips (M1–M4).
 
 ### ✅ Installation
 
@@ -109,15 +109,15 @@ ollama run llama3
 ollama run yi
 ```
 
-ClauseKit will auto-detect and connect to Ollama at `http://localhost:11434`.
+ClauseKitAI will auto-detect and connect to Ollama at `http://localhost:11434`.
 
 ---
 
 ## 🚀 How to Use
 
 ```bash
-git clone https://github.com/your-username/ClauseKit.git
-cd ClauseKit
+git clone https://github.com/your-username/ClauseKitAI.git
+cd ClauseKitAI
 pip install -r requirements.txt
 
 ### Add your API keys (if using OpenAI or Claude)
@@ -135,8 +135,8 @@ brew services start ollama
 ollama run llama3
 ```
 
-4. **Run ClauseKit with local model fallback**  
-   Ollama should be serving at `http://localhost:11434`. ClauseKit will use this when GPT or Claude are not selected.
+4. **Run ClauseKitAI with local model fallback**  
+   Ollama should be serving at `http://localhost:11434`. ClauseKitAI will use this when GPT or Claude are not selected.
 
 
 # Run the app
@@ -189,9 +189,9 @@ streamlit run app/app.py
 
 ---
 
-## 💼 Why ClauseKit Matters
+## 💼 Why ClauseKitAI Matters
 
-ClauseKit is designed as a production-ready legal AI assistant with the following real-world strengths:
+ClauseKitAI is designed as a production-ready legal AI assistant with the following real-world strengths:
 
 | Dimension | Strength |
 |----------|----------|
@@ -208,9 +208,9 @@ ClauseKit is designed as a production-ready legal AI assistant with the followin
 
 ## 🚀 Deployment on [Render.com](https://render.com)
 
-### ✅ Deploying ClauseKit on Render.com
+### ✅ Deploying ClauseKitAI on Render.com
 
-ClauseKit can be deployed in a few steps using [Render](https://render.com), a simple cloud platform for full-stack apps.
+ClauseKitAI can be deployed in a few steps using [Render](https://render.com), a simple cloud platform for full-stack apps.
 
 ---
 
@@ -218,9 +218,9 @@ ClauseKit can be deployed in a few steps using [Render](https://render.com), a s
 
 1. Go to [https://dashboard.render.com](https://dashboard.render.com)
 2. Click **"New +" → "Web Service"**
-3. Connect **https://github.com/taowis/ClauseKit**
+3. Connect **https://github.com/taowis/ClauseKitAI**
 4. Fill out the form:
-   - **Name:** `ClauseKit`
+   - **Name:** `ClauseKitAI`
    - **Environment:** `Python 3`
    - **Build Command:**
      ```bash
@@ -252,7 +252,7 @@ In the **"Environment"** section of the Render dashboard, add:
 
 Once deployed, the app will be available at:
 
-**https://clausekit.onrender.com**
+**https://ClauseKitAI.onrender.com**
 
 Or the subdomain you selected (e.g., `https://subdomain.render.com`)
 
