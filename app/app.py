@@ -14,8 +14,8 @@ show_advanced_models = os.getenv("SHOW_ADVANCED_MODELS", "false").lower() == "tr
 # Load environment variables if any
 DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4.1-mini")
 
-st.set_page_config(page_title="ClauseKit", layout="wide")
-st.title("📄 ClauseKit – AI-Powered Contract Summarizer")
+st.set_page_config(page_title="ClauseKitAI", layout="wide")
+st.title("📄 ClauseKitAI – AI-Powered Contract Summarizer")
 
 st.sidebar.header("⚙️ Configuration")
 
